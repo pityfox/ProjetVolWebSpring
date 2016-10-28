@@ -36,9 +36,9 @@
 				<tr>
 					<td>${compagnieAerienne.id}</td>
 					<td>${compagnieAerienne.nom}</td>
-					<td><a class="btn btn-warning btn-xs" href="${editUrl}"><spring:message
+					<td><a class="btn btn-info btn-xs" href="${editUrl}"><spring:message
 								code="compagnieAeriennes.edit" /></a></td>
-					<td><a class="btn btn-danger btn-xs" href="${deleteUrl}"><spring:message
+					<td><a class="btn btn-warning btn-xs" href="${deleteUrl}"><spring:message
 								code="compagnieAeriennes.delete" /></a></td>
 				</tr>
 			</c:forEach>
