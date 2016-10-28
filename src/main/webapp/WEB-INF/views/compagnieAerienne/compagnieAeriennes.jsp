@@ -12,7 +12,7 @@
 <title><spring:message code="compagnieAeriennes.title" /></title>
 </head>
 <body>
-
+<jsp:include page="/header"></jsp:include>
 	<div class="container">
 		<h2>
 			<spring:message code="compagnieAeriennes.title" />

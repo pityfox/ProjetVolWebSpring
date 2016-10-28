@@ -13,7 +13,7 @@
 <title><spring:message code="compagnieAerienneEdit.title" /></title>
 </head>
 <body>
-
+<jsp:include page="/header"></jsp:include>
 	<div class="container">
 		<fieldset>
 			<legend>

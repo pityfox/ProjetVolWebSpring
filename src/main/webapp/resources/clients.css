@@ -25,6 +25,20 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+/* Dropdown Menu (Hidden by Default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Dropdown Menu List style(Hidden by Default) */
+.dropdown-menu > li {
+    list-style: none;
+}
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -38,6 +52,11 @@
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 

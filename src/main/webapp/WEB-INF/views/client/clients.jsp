@@ -14,6 +14,7 @@
 <link href="${styleClients}" rel="stylesheet" />
 </head>
 <body>
+<jsp:include page="/header"></jsp:include>
 	<div class="container">
 		<h2>
 			<spring:message code="clients.title" />
@@ -71,7 +72,7 @@
 			<tr>
 				<td colspan="13"><div class="dropdown">
 						<button class="btn btn-info"><spring:message code="clients.add"/></button>
-						<div class="dropdown-content ">
+						<div class="dropdown-content">
 							<a href="${addClientPhysiqueUrl}"><spring:message
 							code="clients.addClientPhysique" /></a>
 							<a href="${addClientMoralUrl}"><spring:message

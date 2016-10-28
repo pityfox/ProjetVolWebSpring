@@ -34,7 +34,7 @@ public class CompagnieAerienneController {
 		List<CompagnieAerienne> compagnieAeriennes = compagnieAerienneDao.findAll();
 		
 		model.addAttribute("compagnieAeriennes", compagnieAeriennes);
-
+		model.addAttribute("page", "compagnieAerienne");
 		return "compagnieAerienne/compagnieAeriennes";
 	}
 

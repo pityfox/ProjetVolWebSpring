@@ -38,7 +38,7 @@ public class ClientController {
 	public String list(Model model) {
 		List<Client> clients = clientDao.findAll();
 		model.addAttribute("clients", clients);
-		
+		model.addAttribute("page", "client");
 		return "client/clients";
 	}
 
