@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import vol.metier.dao.ReservationDao;
+import vol.metier.model.ClientEI;
 import vol.metier.model.Reservation;
+import vol.metier.model.TitrePhysique;
 
 @Controller
 @RequestMapping("/reservation")
@@ -50,15 +52,16 @@ public class ReservationController {
 	}
 
 	@RequestMapping("/save")
-	public String save(@ModelAttribute("reservation") @Valid Reservation reservation) {
+	public String save(@ModelAttribute("reservation") @Valid Reservation reservation, BindingResult result, Model model) {
 
-		if (Long.valueOf(reservation.getId() )!= null) {
+		if(result.hasErrors()) {
+			return "reservation/reservationEdit";
+		}
+		
+		if (reservation.getId() != null) {
 			reservationDao.update(reservation);
 		}
 		
-//			else if("edit".equals(mode)) {
-//			reservationDao.update(reservation);
-//		}
 		else {
 			reservationDao.create(reservation);
 		}
