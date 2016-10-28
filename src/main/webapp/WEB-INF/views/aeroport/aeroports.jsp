@@ -12,7 +12,7 @@
 <link href="${bootstrap}" rel="stylesheet" />
 </head>
 <body>
-
+<jsp:include  page="/header"></jsp:include>
 <div class="container">
 		<h2><spring:message code="aeroports.title"/></h2>
 		<table class="table table-striped">

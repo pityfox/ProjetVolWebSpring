@@ -13,6 +13,7 @@
 <link href="${bootstrap}" rel="stylesheet" />
 </head>
 <body>
+<jsp:include  page="/header"></jsp:include>
 	<div class="container">
 		<fieldset>
 			<legend>
