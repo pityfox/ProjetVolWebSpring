@@ -16,6 +16,9 @@
 	<c:url var="client" value="/client" />
 	<c:url var="vol" value="/vol" />
 	<c:url var="compagnieAerienne" value="/compagnieAerienne" />
+	<c:url var="passager" value="/passager" />
+	<c:url var="reservation" value="/reservation" />
+	<c:url var="signup" value="/login/add" />
 	<div class="container">
 
 		<div id=nav " class="navbar navbar-inverse">
@@ -34,24 +37,43 @@
 							<li><a href="${client}"><spring:message
 										code="nav.clients.list" /></a></li>
 						</ul></li>
-						<li class="dropdown ${page eq 'vol' ? 'active' : '' }"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="${vol}"><spring:message
+					<li class="dropdown ${page eq 'vol' ? 'active' : '' }"><a
+						class="dropdown-toggle" data-toggle="dropdown" href="${vol}"><spring:message
 								code="nav.vols" /> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="${vol}"><spring:message
 										code="nav.vols.list" /></a></li>
+							<li><a href="${vol}/add"><spring:message
+										code="add" /></a></li>
 						</ul></li>
-					<li class="dropdown ${page eq 'compagnieAerienne' ? 'active' : '' }"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="${compagnieAerienne}"><spring:message
+					<li
+						class="dropdown ${page eq 'compagnieAerienne' ? 'active' : '' }"><a
+						class="dropdown-toggle" data-toggle="dropdown"
+						href="${compagnieAerienne}"><spring:message
 								code="nav.compagnieAeriennes" /> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="${compagnieAerienne}"><spring:message
 										code="nav.compagnieAeriennes.list" /></a></li>
 						</ul></li>
+					<li class="dropdown ${page eq 'passager' ? 'active' : '' }"><a
+						class="dropdown-toggle" data-toggle="dropdown" href="${passager}"><spring:message
+								code="nav.passager" /> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${passager}"><spring:message
+										code="nav.passager.list" /></a></li>
+						</ul></li>
+					<li class="dropdown ${page eq 'reservation' ? 'active' : '' }"><a
+						class="dropdown-toggle" data-toggle="dropdown"
+						href="${reservation}"><spring:message code="nav.reservation" />
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${reservation}"><spring:message
+										code="nav.reservation.list" /></a></li>
+						</ul></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Sign Up</a></li>
+					<li><a href="${signup}">Sign Up</a></li>
 					<li><a href="#">Login</a></li>
 				</ul>
 

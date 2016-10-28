@@ -8,30 +8,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><spring:message code="aeroportEdit.title" /></title>
+<title><spring:message code="reservationEdit.title" /></title>
 <spring:url value="/resources/bootstrap.css" var="bootstrap" />
 <link href="${bootstrap}" rel="stylesheet" />
 </head>
 <body>
-<jsp:include  page="/header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 	<div class="container">
 		<fieldset>
 			<legend>
-				<spring:message code="aeroportEdit.fieldset" />
+				<spring:message code="reservationEdit.fieldset" />
 			</legend>
-			<form:form method="post" modelAttribute="aeroport" action="save">
+			<form:form method="post" modelAttribute="reservation" action="save">
 				<form:hidden path="id" />
+				<form:hidden path="version" />
 				
 				<div class="form-group">
-					<form:label path="nom" class="control-label">
-						<spring:message code="aeroportEdit.nom" />
+					<form:label path="date" class="control-label">
+						<spring:message code="reservationEdit.date" />
 					</form:label>
-					<form:input path="nom" class="form-control" />
-					<form:errors path="nom" />
-				</div>
+					<form:input path="date" class="form-control" type="date" />
+					<form:errors path="date"/>
+				</div>	
+							
+				<div class="form-group">
+					<form:label path="numero" class="control-label">
+						<spring:message code="reservationEdit.numero" />
+					</form:label>
+					<form:input path="numero" class="form-control" />
+					<form:errors path="numero" />
+				</div>					
 				
 				<input type="submit"
-					value="<spring:message code="aeroportEdit.save"/>"
+					value="<spring:message code="reservationEdit.save"/>"
 					class="btn btn-success" />
 			</form:form>
 		</fieldset>

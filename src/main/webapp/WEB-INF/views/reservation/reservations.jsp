@@ -7,47 +7,48 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><spring:message code="logins.title" /></title>
+<title><spring:message code="reservations.title" /></title>
 <spring:url value="/resources/bootstrap.css" var="bootstrap" />
 <link href="${bootstrap}" rel="stylesheet" />
 </head>
 <body>
-<jsp:include  page="/header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 	<div class="container">
-		<h2><spring:message code="logins.title"/></h2>
+		<h2><spring:message code="reservations.title"/></h2>
 		<table class="table table-striped">
 			<tr>
-				<th><spring:message code="logins.id" /></th>
-				<th><spring:message code="logins.login" /></th>
-				<th><spring:message code="logins.motDePasse" /></th>
-				<th><spring:message code="logins.admin" /></th>
+				<th><spring:message code="reservations.id" /></th>
+				<th><spring:message code="reservations.date" /></th>
+				<th><spring:message code="reservations.numero" /></th>
 				
+				
+				<th></th>
+				<th></th>
 			</tr>
 
-			<c:forEach items="${mesLogins}" var="login">
-				<c:url var="editUrl" value="/login/edit">
-					<c:param name="id" value="${login.id}" />
+			<c:forEach items="${reservations}" var="reservation">
+				<c:url var="editUrl" value="/reservation/edit">
+					<c:param name="id" value="${reservation.id}" />
 				</c:url>
-				<c:url var="deleteUrl" value="/login/delete">
-					<c:param name="id" value="${login.id}" />
+				<c:url var="deleteUrl" value="/reservation/delete">
+					<c:param name="id" value="${reservation.id}" />
 				</c:url>
 				<tr>
-					<td>${login.id}</td>
-				
-					<td>${login.login}</td>
-					<td>${login.motDePasse}</td>
-					<td>${login.admin}</td>
+					<td>${reservation.id}</td>
+					<td><fmt:formatDate value="${reservation.date}"
+							pattern="dd/MM/yyyy" /></td>
+					<td>${reservation.numero}</td>
 					
 					<td><a href="${editUrl}" class="btn btn-info btn-xs"><spring:message
-								code="logins.edit" /></a></td>
+								code="reservations.edit" /></a></td>
 					<td><a href="${deleteUrl}" class="btn btn-warning btn-xs"><spring:message
-								code="logins.delete" /></a></td>
+								code="reservations.delete" /></a></td>
 				</tr>
 			</c:forEach>
-			<c:url var="addUrl" value="/login/add" />
+			<c:url var="addUrl" value="/reservation/add" />
 			<tr>
 				<td colspan="7"><a href="${addUrl}" class="btn btn-info"><spring:message
-							code="logins.add"/></a></td>
+							code="reservations.add"/></a></td>
 			</tr>
 		</table>
 

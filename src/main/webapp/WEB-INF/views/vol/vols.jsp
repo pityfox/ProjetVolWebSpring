@@ -12,6 +12,7 @@
 <link href="${bootstrap}" rel="stylesheet" />
 </head>
 <body>
+<jsp:include page="/header"></jsp:include>
 	<%-- <jsp:include page="/WEB-INF/views/header.jsp"/> --%>
 	<div class="container">
 		<h2>
