@@ -10,18 +10,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <spring:url value="/resources/bootstrap.css" var="bootstrap" />
 <link href="${bootstrap}" rel="stylesheet" />
-<title><spring:message code="clientEdit.title" /></title>
+<title><spring:message code="clientEIEdit.title" /></title>
 </head>
 <body>
 
 	<div class="container">
 		<fieldset>
 			<legend>
-				<spring:message code="clientEdit.fieldset" />
+				<spring:message code="clientEIEdit.fieldset" />
 			</legend>
 
-			<form:form method="post" action="save" modelAttribute="client"
-				cssClass="form-horizontal">
+			<form:form method="post" action="saveClientEI"
+				modelAttribute="client" cssClass="form-horizontal">
 				<form:hidden path="id" />
 				<form:hidden path="version" />
 
@@ -39,11 +39,12 @@
 									<spring:message code="${t.label}" />
 								</form:option>
 							</c:forEach>
-						</form:select><br>
+						</form:select>
+						<br>
 						<form:errors cssClass="text-danger" path="titre" />
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<form:label cssClass="col-xs-3 control-label" path="nom">
 						<spring:message code="clientEdit.nom" />
@@ -55,12 +56,12 @@
 				</div>
 
 				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="siret">
-						<spring:message code="clientEdit.siret" />
+					<form:label cssClass="col-xs-3 control-label" path="prenom">
+						<spring:message code="clientEdit.prenom" />
 					</form:label>
 					<div class="col-xs-5">
-						<form:input cssClass="form-control" path="siret" />
-						<form:errors cssClass="text-danger" path="siret" />
+						<form:input cssClass="form-control" path="prenom" />
+						<form:errors cssClass="text-danger" path="prenom" />
 					</div>
 				</div>
 
@@ -89,7 +90,10 @@
 						<spring:message code="clientEdit.email" />
 					</form:label>
 					<div class="col-xs-5">
-						<form:input path="email" cssClass="form-control" type="email" />
+						<div class="input-group">
+							<span class="input-group-addon">@</span>
+							<form:input path="email" cssClass="form-control" />
+						</div>
 						<form:errors cssClass="text-danger" path="email" />
 					</div>
 				</div>
@@ -129,6 +133,12 @@
 					<div class="col-xs-5 text-right">
 						<input class="btn btn-primary" type="submit"
 							value="<spring:message code="clientEdit.save"/>" />
+						<c:url var="cancel" value="/client" />
+						<a href="${cancel}">
+							<button type="button" class="btn">
+								<spring:message code="clientEdit.cancel" />
+							</button>
+						</a>
 					</div>
 				</div>
 

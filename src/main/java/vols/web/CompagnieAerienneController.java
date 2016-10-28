@@ -59,11 +59,10 @@ public class CompagnieAerienneController {
 	public String save(@ModelAttribute("compagnieAerienne") @Valid CompagnieAerienne compagnieAerienne, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
-			
 			return "compagnieAerienne/compagnieAerienneEdit";
 		}
 		
-		if(compagnieAerienne.getId() != null) {
+		if(Long.valueOf(compagnieAerienne.getId()) != null) {
 			compagnieAerienneDao.update(compagnieAerienne);
 		} else {
 			compagnieAerienneDao.create(compagnieAerienne);

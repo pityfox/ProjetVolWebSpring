@@ -20,79 +20,18 @@
 				<spring:message code="compagnieAerienneEdit.fieldset" />
 			</legend>
 
-			<form:form method="post" action="save" modelAttribute="compagnieAerienne"
-				cssClass="form-horizontal">
-				<input type="hidden" name="mode" value="${mode}" />
+			<form:form method="post" action="save"
+				modelAttribute="compagnieAerienne" cssClass="form-horizontal">
 				<form:hidden path="version" />
-
+				<form:hidden path="id" />
+				
 				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="id.numBanque">
-						<spring:message code="compagnieAerienneEdit.numBanque" />
+					<form:label cssClass="col-xs-3 control-label" path="nom">
+						<spring:message code="compagnieAerienneEdit.nom" />
 					</form:label>
 					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="id.numBanque" readonly="${mode eq 'edit'}" />
-						<form:errors cssClass="text-danger" path="id.numBanque" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="id.numCompagnieAerienne">
-						<spring:message code="compagnieAerienneEdit.numCompagnieAerienne" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="id.numCompagnieAerienne" readonly="${mode eq 'edit'}" />
-						<form:errors cssClass="text-danger" path="id.numCompagnieAerienne" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="libelle">
-						<spring:message code="compagnieAerienneEdit.libelle" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="libelle" />
-						<form:errors cssClass="text-danger" path="libelle" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="horaires">
-						<spring:message code="compagnieAerienneEdit.horaires" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="horaires" />
-						<form:errors cssClass="text-danger" path="horaires" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="adresse.rue">
-						<spring:message code="compagnieAerienneEdit.rue" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="adresse.rue" />
-						<form:errors cssClass="text-danger" path="adresse.rue" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label"
-						path="adresse.codePostal">
-						<spring:message code="compagnieAerienneEdit.codePostal" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="adresse.codePostal" />
-						<form:errors cssClass="text-danger" path="adresse.codePostal" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<form:label cssClass="col-xs-3 control-label" path="adresse.ville">
-						<spring:message code="compagnieAerienneEdit.ville" />
-					</form:label>
-					<div class="col-xs-5">
-						<form:input cssClass="form-control"  path="adresse.ville" />
-						<form:errors cssClass="text-danger" path="adresse.ville" />
+						<form:input cssClass="form-control" path="nom" />
+						<form:errors cssClass="text-danger" path="nom" />
 					</div>
 				</div>
 
@@ -101,6 +40,12 @@
 					<div class="col-xs-5 text-right">
 						<input class="btn btn-primary" type="submit"
 							value="<spring:message code="compagnieAerienneEdit.save"/>" />
+						<c:url var="cancel" value="/compagnieAerienne" />
+						<a href="${cancel}">
+							<button type="button" class="btn">
+								<spring:message code="clientEdit.cancel" />
+							</button>
+						</a>
 					</div>
 				</div>
 			</form:form>

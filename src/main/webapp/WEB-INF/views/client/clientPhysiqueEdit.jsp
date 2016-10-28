@@ -10,17 +10,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <spring:url value="/resources/bootstrap.css" var="bootstrap" />
 <link href="${bootstrap}" rel="stylesheet" />
-<title><spring:message code="clientEdit.title" /></title>
+<title><spring:message code="clientPhysiqueEdit.title" /></title>
 </head>
 <body>
 
 	<div class="container">
 		<fieldset>
 			<legend>
-				<spring:message code="clientEdit.fieldset" />
+				<spring:message code="clientPhysiqueEdit.fieldset" />
 			</legend>
 
-			<form:form method="post" action="save" modelAttribute="client"
+			<form:form method="post" action="saveClientPhysique" modelAttribute="client"
 				cssClass="form-horizontal">
 				<form:hidden path="id" />
 				<form:hidden path="version" />
@@ -89,7 +89,10 @@
 						<spring:message code="clientEdit.email" />
 					</form:label>
 					<div class="col-xs-5">
-						<form:input path="email" cssClass="form-control" type="email" />
+						<div class="input-group">
+							<span class="input-group-addon">@</span>
+							<form:input path="email" cssClass="form-control" />
+						</div>
 						<form:errors cssClass="text-danger" path="email" />
 					</div>
 				</div>
@@ -129,6 +132,12 @@
 					<div class="col-xs-5 text-right">
 						<input class="btn btn-primary" type="submit"
 							value="<spring:message code="clientEdit.save"/>" />
+						<c:url var="cancel" value="/client" />
+						<a href="${cancel}">
+							<button type="button" class="btn">
+								<spring:message code="clientEdit.cancel" />
+							</button>
+						</a>
 					</div>
 				</div>
 

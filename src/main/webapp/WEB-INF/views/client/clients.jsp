@@ -10,13 +10,17 @@
 <title><spring:message code="clients.title" /></title>
 <spring:url value="/resources/bootstrap.css" var="bootstrap" />
 <link href="${bootstrap}" rel="stylesheet" />
+<spring:url value="/resources/clients.css" var="styleClients" />
+<link href="${styleClients}" rel="stylesheet" />
 </head>
 <body>
 	<div class="container">
-		<h2><spring:message code="clients.title"/></h2>
+		<h2>
+			<spring:message code="clients.title" />
+		</h2>
 		<table class="table table-striped">
 			<tr>
-				
+
 				<th><spring:message code="clients.id" /></th>
 				<th><spring:message code="clients.type" /></th>
 				<th><spring:message code="clients.titre" /></th>
@@ -46,7 +50,7 @@
 					<%-- <td><spring:message code="${client.titre.label}" /></td> --%>
 					<td>${client.titre}</td>
 					<td>${client.nom}</td>
-				<%-- 	<td>${client.prenom}</td>
+					<%-- 	<td>${client.prenom}</td>
 					<td>${client.siret}</td> --%>
 					<td>${client.numeroTel}</td>
 					<td>${client.numeroFax}</td>
@@ -54,17 +58,29 @@
 					<td>${client.adresse.codePostal}</td>
 					<td>${client.adresse.ville}</td>
 					<td>${client.adresse.pays}</td>
-					
+
 					<td><a href="${editUrl}" class="btn btn-info btn-xs"><spring:message
 								code="clients.edit" /></a></td>
 					<td><a href="${deleteUrl}" class="btn btn-warning btn-xs"><spring:message
 								code="clients.delete" /></a></td>
 				</tr>
 			</c:forEach>
-			<c:url var="addUrl" value="/client/add" />
+			<c:url var="addClientPhysiqueUrl" value="/client/addClientPhysique" />
+			<c:url var="addClientMoralUrl" value="/client/addClientMoral" />
+			<c:url var="addClientEIUrl" value="/client/addClientEI" />
 			<tr>
-				<td colspan="13"><a href="${addUrl}" class="btn btn-info"><spring:message
-							code="clients.add"/></a></td>
+				<td colspan="13"><div class="dropdown">
+						<button class="btn btn-info"><spring:message code="clients.add"/></button>
+						<div class="dropdown-content ">
+							<a href="${addClientPhysiqueUrl}"><spring:message
+							code="clients.addClientPhysique" /></a>
+							<a href="${addClientMoralUrl}"><spring:message
+							code="clients.addClientMoral" /></a> 
+							 <a href="${addClientEIUrl}"><spring:message
+							code="clients.addClientEI" /></a>
+						</div>
+					</div>
+					</td>
 			</tr>
 		</table>
 
