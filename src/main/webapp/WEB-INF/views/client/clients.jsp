@@ -23,6 +23,9 @@
 			<tr>
 
 				<th><spring:message code="clients.id" /></th>
+				<th><spring:message code="clients.login" /></th>
+				<th><spring:message code="clients.password" /></th>
+				<th><spring:message code="clients.admin" /></th>
 				<th><spring:message code="clients.type" /></th>
 				<th><spring:message code="clients.titre" /></th>
 				<th><spring:message code="clients.nom" /></th>
@@ -47,6 +50,9 @@
 				</c:url>
 				<tr>
 					<td>${client.id}</td>
+					<td>${client.login.login}</td>
+					<td>${client.login.motDePasse}</td>
+					<td>${client.login.admin}</td>
 					<td>${client.type}</td>
 					<%-- <td><spring:message code="${client.titre.label}" /></td> --%>
 					<td>${client.titre}</td>

@@ -94,7 +94,7 @@ public class ClientController {
 			return "client/clientPhysiqueEdit";
 		}
 		
-		if(Long.valueOf(client.getId()) != null) {
+		if(client.getId() != null) {
 			clientDao.update(client);
 		} else { 
 			clientDao.create(client);
@@ -111,7 +111,7 @@ public class ClientController {
 			return "client/clientMoralEdit";
 		}
 		
-		if(Long.valueOf(client.getId()) != null) {
+		if(client.getId() != null) {
 			clientDao.update(client);
 		} else { 
 			clientDao.create(client);
@@ -128,7 +128,7 @@ public class ClientController {
 			return "client/clientEIEdit";
 		}
 		
-		if(Long.valueOf(client.getId()) != null) {
+		if(client.getId() != null) {
 			clientDao.update(client);
 		} else { 
 			clientDao.create(client);
