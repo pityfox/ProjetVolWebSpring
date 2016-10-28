@@ -24,6 +24,8 @@
 				<th><spring:message code="vol.att.dtArrivee" /></th>
 				<th><spring:message code="vol.att.hDepart" /></th>
 				<th><spring:message code="vol.att.hArrivee" /></th>
+				<th><spring:message code="vol.att.Depart" /></th>
+				<th><spring:message code="vol.att.Arrivee" /></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -45,6 +47,8 @@
 							pattern="HH:mm" /></td>
 					<td><fmt:formatDate value="${vol.heureArrivee}"
 							pattern="HH:mm" /></td>
+					<td>${(vol.depart==null)?null:vol.depart.nom}</td>
+					<td>${(vol.depart==null)?null:vol.arrivee.nom}</td>
 					<td><a href="${editUrl}" class="btn btn-info btn-xs"><spring:message
 								code="edit" /></a></td>
 					<td><a href="${deleteUrl}" class="btn btn-warning btn-xs"><spring:message
