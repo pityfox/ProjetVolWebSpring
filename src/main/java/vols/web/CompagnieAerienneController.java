@@ -62,7 +62,7 @@ public class CompagnieAerienneController {
 			return "compagnieAerienne/compagnieAerienneEdit";
 		}
 		
-		if(Long.valueOf(compagnieAerienne.getId()) != null) {
+		if(compagnieAerienne.getId() != null) {
 			compagnieAerienneDao.update(compagnieAerienne);
 		} else {
 			compagnieAerienneDao.create(compagnieAerienne);

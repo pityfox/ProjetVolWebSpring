@@ -31,7 +31,7 @@
 					<c:param name="id" value="${compagnieAerienne.id}" />
 				</c:url>
 				<c:url var="deleteUrl" value="/compagnieAerienne/delete">
-					<c:param name="id" value="${compagnieAerienne.nom}" />
+					<c:param name="id" value="${compagnieAerienne.id}" />
 				</c:url>
 				<tr>
 					<td>${compagnieAerienne.id}</td>
