@@ -14,6 +14,7 @@
 <body>
 	<c:url var="home" value="/" />
 	<c:url var="client" value="/client" />
+	<c:url var="vol" value="/vol" />
 	<c:url var="compagnieAerienne" value="/compagnieAerienne" />
 	<div class="container">
 
@@ -28,17 +29,24 @@
 						href="${home}"><spring:message code="nav.home" /></a></li>
 					<li class="dropdown ${page eq 'client' ? 'active' : '' }"><a
 						class="dropdown-toggle" data-toggle="dropdown" href="${client}"><spring:message
-								code="nav.client" /> <span class="caret"></span></a>
+								code="nav.clients" /> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="${client}"><spring:message
-										code="nav.client.list" /></a></li>
+										code="nav.clients.list" /></a></li>
+						</ul></li>
+						<li class="dropdown ${page eq 'vol' ? 'active' : '' }"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="${vol}"><spring:message
+								code="nav.vols" /> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${vol}"><spring:message
+										code="nav.vols.list" /></a></li>
 						</ul></li>
 					<li class="dropdown ${page eq 'compagnieAerienne' ? 'active' : '' }"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="${compagnieAerienne}"><spring:message
-								code="nav.compagnieAerienne" /> <span class="caret"></span></a>
+								code="nav.compagnieAeriennes" /> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="${compagnieAerienne}"><spring:message
-										code="nav.compagnieAerienne.list" /></a></li>
+										code="nav.compagnieAeriennes.list" /></a></li>
 						</ul></li>
 				</ul>
 

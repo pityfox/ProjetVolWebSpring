@@ -23,7 +23,7 @@ import vol.metier.model.TitreMoral;
 import vol.metier.model.TitrePhysique;
 
 @Controller
-@RequestMapping("/client")
+@RequestMapping({"/client", "/clients"})
 public class ClientController {
 	@Autowired
 	private ClientDao clientDao;

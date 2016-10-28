@@ -17,7 +17,7 @@ import vol.metier.dao.CompagnieAerienneDao;
 import vol.metier.model.CompagnieAerienne;
 
 @Controller
-@RequestMapping("/compagnieAerienne")
+@RequestMapping({"/compagnieAerienne","/compagniesAerienne","/compagnieAeriennes","/compagniesAeriennes"})
 public class CompagnieAerienneController {
 
 	@Autowired
