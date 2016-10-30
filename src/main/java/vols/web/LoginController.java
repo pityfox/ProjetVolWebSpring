@@ -20,9 +20,8 @@ import vol.metier.model.Login;
 @RequestMapping("/login")
 
 public class LoginController {
-	@SuppressWarnings("unused")
 	@Autowired
-	private LoginDao logintDao;
+	private LoginDao loginDao;
 
 	
 	public LoginController() {
@@ -32,7 +31,7 @@ public class LoginController {
 	
 	@RequestMapping({"/list",""})
 	public String list(Model model) {
-		List<Login> mesLogins = logintDao.findAll();
+		List<Login> mesLogins = loginDao.findAll();
 		
 		model.addAttribute("mesLogins", mesLogins);
 
@@ -49,7 +48,7 @@ public class LoginController {
 
 	@RequestMapping("/edit")
 	public String edit(@RequestParam("id") Long idLogin, Model model) {
-		Login login= logintDao.find(idLogin);
+		Login login= loginDao.find(idLogin);
 		
 		model.addAttribute("login", login);
 		
@@ -60,15 +59,13 @@ public class LoginController {
 	public String save(@ModelAttribute("login") @Valid Login login, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
-			
-			
 			return "login/loginEdit";
 		}
 		
-		if(Long.valueOf(login.getId())!=null) {
-			logintDao.update(login);
+		if(login.getId()!=null) {
+			loginDao.update(login);
 		} else {
-			logintDao.create(login);
+			loginDao.create(login);
 		}
 		
 		return "forward:list";
@@ -76,9 +73,9 @@ public class LoginController {
 
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("id") Long idLogin) {
-		Login login = logintDao.find(idLogin);
+		Login login = loginDao.find(idLogin);
 		
-		logintDao.delete(login);
+		loginDao.delete(login);
 		
 		return "forward:list";
 	}

@@ -76,7 +76,7 @@
 			<c:url var="addClientMoralUrl" value="/client/addClientMoral" />
 			<c:url var="addClientEIUrl" value="/client/addClientEI" />
 			<tr>
-				<td colspan="13"><div class="dropdown">
+				<td colspan="15"><div class="dropdown">
 						<button class="btn btn-info"><spring:message code="clients.add"/></button>
 						<div class="dropdown-content">
 							<a href="${addClientPhysiqueUrl}"><spring:message

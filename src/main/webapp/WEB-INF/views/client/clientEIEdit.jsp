@@ -128,6 +128,27 @@
 						<form:errors cssClass="text-danger" path="adresse.ville" />
 					</div>
 				</div>
+				
+				<div class="form-group">
+					<form:label cssClass="col-xs-3 control-label" path="login.login">
+						<spring:message code="clientEdit.login.login" />
+					</form:label>
+					<div class="col-xs-5">
+						<form:input cssClass="form-control" path="login.login" />
+						<form:errors cssClass="text-danger" path="login.login" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<form:label cssClass="col-xs-3 control-label" path="login.motDePasse">
+						<spring:message code="clientEdit.login.motDePasse" />
+					</form:label>
+					<div class="col-xs-5">
+						<form:input cssClass="form-control" path="login.motDePasse" />
+						<form:errors cssClass="text-danger" path="login.motDePasse" />
+					</div>
+				</div>
+				
 				<div class="form-group">
 					<div class="col-xs-3 text-right"></div>
 					<div class="col-xs-5 text-right">

@@ -41,7 +41,7 @@
 					<form:label path="heureDepart" class="control-label">
 						<spring:message code="volEdit.heureDepart" />
 					</form:label>
-					<form:input path="heureDepart" class="form-control" type="datetime" />
+					<form:input path="heureDepart" class="form-control" type="time" />
 					<form:errors path="heureDepart" />
 				</div>
 				<div class="form-group">
@@ -49,14 +49,13 @@
 						<spring:message code="volEdit.heureArrivee" />
 					</form:label>
 					<form:input path="heureArrivee" class="form-control"
-						type="datetime" />
+						type="time" />
 					<form:errors path="heureArrivee" />
 				</div>
 				<div class="form-group">
 					<form:label path="depart" class="control-label">
  						<spring:message code="volEdit.depart" /> 
 					</form:label>
-
 					<form:select path="depart.id">
 						<form:option value="">
 							<spring:message code="volEdit.depart.selection" />
@@ -67,12 +66,14 @@
 							</form:option>
 						</c:forEach>
 					</form:select>
+					<form:errors path="depart.id" />
 					</div>
+					
+					
 					<div class="form-group">
-					<form:label path="depart" class="control-label">
+					<form:label path="arrivee" class="control-label">
 					<spring:message code="volEdit.arrivee" /> 
 					</form:label>
-					
 					<form:select path="arrivee.id">
 						<form:option value="">
 							<spring:message code="volEdit.arrivee.selection" />
@@ -83,6 +84,7 @@
 							</form:option>
 						</c:forEach>
 					</form:select>
+					<form:errors path="arrivee.id" />
 				</div>
 				<input type="submit" value="<spring:message code="save"/>"
 					class="btn btn-success" />

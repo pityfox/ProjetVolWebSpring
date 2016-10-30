@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import vol.metier.dao.ClientDao;
+import vol.metier.dao.LoginDao;
 import vol.metier.model.Client;
 import vol.metier.model.ClientEI;
 import vol.metier.model.ClientMoral;
@@ -25,9 +26,12 @@ import vol.metier.model.TitrePhysique;
 @Controller
 @RequestMapping({"/client", "/clients"})
 public class ClientController {
+	
 	@Autowired
 	private ClientDao clientDao;
 
+	@Autowired
+	private LoginDao loginDao;
 	
 	public ClientController() {
 		super();
@@ -126,6 +130,12 @@ public class ClientController {
 		if(result.hasErrors()) {
 			model.addAttribute("titres", TitrePhysique.values());
 			return "client/clientEIEdit";
+		}
+		
+		if(client.getLogin().getId()!=null){
+			loginDao.update(client.getLogin());
+		}else{
+			loginDao.create(client.getLogin());
 		}
 		
 		if(client.getId() != null) {

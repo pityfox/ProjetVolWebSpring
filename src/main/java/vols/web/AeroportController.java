@@ -63,7 +63,7 @@ public class AeroportController {
 				return "aeroport/aeroportEdit";
 			}
 			
-			if(Long.valueOf(aeroport.getId())!=null) {
+			if(aeroport.getId()!=null) {
 				aeroportDao.update(aeroport);
 			} else {
 				aeroportDao.create(aeroport);

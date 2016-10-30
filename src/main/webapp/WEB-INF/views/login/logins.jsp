@@ -21,6 +21,8 @@
 				<th><spring:message code="logins.login" /></th>
 				<th><spring:message code="logins.motDePasse" /></th>
 				<th><spring:message code="logins.admin" /></th>
+				<th></th>
+				<th></th>
 				
 			</tr>
 

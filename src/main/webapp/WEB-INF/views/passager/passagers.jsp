@@ -52,7 +52,7 @@
 			</c:forEach>
 			<c:url var="addUrl" value="/passager/add" />
 			<tr>
-				<td colspan="7"><a href="${addUrl}" class="btn btn-info"><spring:message
+				<td colspan="8"><a href="${addUrl}" class="btn btn-info"><spring:message
 							code="passagers.add"/></a></td>
 			</tr>
 		</table>

@@ -5,9 +5,12 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +31,7 @@ public class VolsController {
 	@Autowired
 	private AeroportDao aeroportDao;
 
+	
 	@RequestMapping({ "/list", "" })
 	public String list(Model model) {
 		List<Vol> vols = volDao.findAllFetch();
@@ -38,6 +42,11 @@ public class VolsController {
 		return "vol/vols";
 	}
 
+	@InitBinder     /* Converts empty strings into null when a form is submitted */  
+	  public void initBinder(WebDataBinder binder) {  
+	      binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));  
+	  }
+	
 	@RequestMapping("/add")
 	public ModelAndView add( Model model) {
 		ModelAndView mav = new ModelAndView("vol/volEdit", "vol", new Vol());
