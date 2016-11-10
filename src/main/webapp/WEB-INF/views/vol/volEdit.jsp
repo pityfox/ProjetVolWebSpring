@@ -53,7 +53,7 @@
 					<form:errors path="heureArrivee" />
 				</div>
 				<div class="form-group">
-					<form:label path="depart" class="control-label">
+					<form:label path="depart.id" class="control-label">
  						<spring:message code="volEdit.depart" /> 
 					</form:label>
 					<form:select path="depart.id">
@@ -71,11 +71,11 @@
 					
 					
 					<div class="form-group">
-					<form:label path="arrivee" class="control-label">
+					<form:label path="arrivee.id" class="control-label">
 					<spring:message code="volEdit.arrivee" /> 
 					</form:label>
-					<form:select path="arrivee.id">
-						<form:option value="">
+					<form:select path="arrivee.id" >
+						<form:option value="${null}" >
 							<spring:message code="volEdit.arrivee.selection" />
 						</form:option>
 						<c:forEach items="${aeroports}" var="t">
